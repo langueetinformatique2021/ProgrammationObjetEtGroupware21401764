@@ -44,6 +44,9 @@ public class Carafe {
 	 // 方法：将水壶填满
 	public void Remplir() {
 		this.contenu_ = capacite_; //"this" sert a assurer ceci est un attribut de objet
+//在 Java 中，this 关键字是一个引用变量，指向当前对象的实例。它在类的构造函数、方法和属性中使用
+//this.contenu_ = capacite_; this.contenu 指的是当前对象的实例变量，而 capacite（没有 this）是构造函数的参数。通过 this.contenu = capacite;，将参数值赋给当前对象的实例变量。
+	  
 	}
 	
 // Vider une carafe complete
@@ -65,11 +68,23 @@ public class Carafe {
 	public int Capacite() {
 		return this.capacite_;
 	}
-	 // 方法：将当前水壶的水倒入另一个水壶中,不超过目标水壶的容量。
-	public void Transvaser() {
-		 int transferAmount = Math.min(this.contenu_, autre.capacite_ - autre.contenu_);
-	        this.contenu_ -= transferAmount;
-	        autre.contenu_ += transferAmount;
+	
+	
+//imaginer qu'on a deux carafes, un est 5 litrs,autre est 7 litres, carafe de 5 litres sera vide
+//@para c carafe a transvaser
+// dans le cadre de class, on a deux objets et un parametres	
+// transvaser la carafe c dans la carafe this	
+    // 假设有两个水壶，一个是5升的空水壶，另一个是7升的水壶。5升的水壶将被倒空。
+	// @param c 指定的目标水壶，将当前水壶的水倒入该水壶中。
+	// 方法：将当前水壶的水倒入目标水壶 c 中，不超过目标水壶的容量。
+
+	public void Transvaser(Carafe c) {
+// 计算可以转移的水量（取当前水壶中水量和目标水壶剩余容量的较小值）
+		int transferAmount = Math.min(this.contenu_,  c.capacite_ - c.contenu_);
+		 // 从当前水壶中减少转移的水量
+		this.contenu_ -= transferAmount;
+		 // 将转移的水量增加到目标水壶中
+	    c.contenu_ += transferAmount;
 	}
 	
 	
