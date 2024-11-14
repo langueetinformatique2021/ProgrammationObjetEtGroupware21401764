@@ -64,28 +64,57 @@ public class Carafe {
 	public int Contenu() {
 		return this.contenu_;
 	}
+    // il y  a des methodes et attributs privates, la plupart des methodes sont privates
+	//private void : les autres peuvent pas appliauer 
+	
+	 private void Contenu(int contenu) {
+		 this.contenu_ = contenu;
+	 }
+	
+	
+	
+	
 	// 获取水壶最大容量
 	public int Capacite() {
 		return this.capacite_;
 	}
-	
+	private void Capacite(int (capacite){
+		return this.capacite_;
+	}
 	
 //imaginer qu'on a deux carafes, un est 5 litrs,autre est 7 litres, carafe de 5 litres sera vide
 //@para c carafe a transvaser
-// dans le cadre de class, on a deux objets et un parametres	
-// transvaser la carafe c dans la carafe this	
+// dans le cadre de class, on a deux objets et un parametre	
+// transvaser la carafe "c" dans la carafe "this"	
     // 假设有两个水壶，一个是5升的空水壶，另一个是7升的水壶。5升的水壶将被倒空。
-	// @param c 指定的目标水壶，将当前水壶的水倒入该水壶中。
-	// 方法：将当前水壶的水倒入目标水壶 c 中，不超过目标水壶的容量。
+	// @param c 将c水壶的水倒入目标水壶 this中
+	// 方法：将c水壶的水倒入目标水壶 this中，不超过目标水壶的容量。
 
 	public void Transvaser(Carafe c) {
 // 计算可以转移的水量（取当前水壶中水量和目标水壶剩余容量的较小值）
-		int transferAmount = Math.min(this.contenu_,  c.capacite_ - c.contenu_);
+		//int transferAmount = Math.min(this.contenu_,  c.capacite_ - c.contenu_);
+	// preciser les methodes
 		 // 从当前水壶中减少转移的水量
-		this.contenu_ -= transferAmount;
+		//this.contenu_ -= transferAmount;
 		 // 将转移的水量增加到目标水壶中
-	    c.contenu_ += transferAmount;
+	   // c.contenu_ += transferAmount;
+// code de prof : utiliser directement des  assecseurs mais pas des attributs
+	    int reste = this.capacite_ - this.contenu_;
+	    if (c.Contenu() < reste) { // on va pouvoir vider la carafe c
+	    	// on a la possibilite de vider et remplir la carafe completement	        
+	        System.out.println(alternative 1")
+	    	this.Contenu(Contenu() + c.Contenu());   
+	        c.Vider();
 	}
+	    else {
+	    	c.Contenu(C.Contenu() - reste);
+	    	//c.Contenu_ -= reste; 
+	    	this.Remplir()
+	    	//modifier les attributs partout a ce moment
+	    }
+	    	
+	    }
 	
-	
+// il faut tjs utiliser les functions a disposition
+// il faut tjs tester le code pour savoir s'il y a des erreurs
 }
