@@ -44,6 +44,10 @@ public class Felin extends Animal {
 // Exemple : méthode à définir selon le cri spécifique du félin
     	System.out.printlin("Je suis un felin !");
     }
+    public String nom() {
+    	    return null;
+ // 这是一个方法，用来返回猫科动物的名字（String 类型）。方法体中直接返回了 null，说明当前没有具体的实现逻辑
+    }
 }
 // une classe abstract a une methode abstract, et il faut le tester
 // la fonction abstract : il faut implementer une methode
