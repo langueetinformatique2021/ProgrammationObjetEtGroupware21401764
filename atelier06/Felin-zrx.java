@@ -31,15 +31,21 @@ public class Felin extends Animal {
         super.presente();
 // super est la methode
 //super.présente(); 调用父类 Animal 的 présente() 方法，显示父类的基本信息
- // Détermine si le félin est domestique ou sauvage
+// Détermine si le félin est domestique ou sauvage
         String etat = (domestique) ? "domestique" : "sauvage";
+// 根据属性 domestique 的值，决定 etat 是 "domestique"（驯化）还是 "sauvage"（野生）
+// 若 domestique == true，则 etat = "domestique"；否则，etat = "sauvage"
         System.out.println("je suis vraiment un animal " + etat) ;
     }
+    
+// crier()是方法,该方法负责模拟猫科动物的叫声
 /** cri du félin */
     public void crier() {
+// Exemple : méthode à définir selon le cri spécifique du félin
     	System.out.printlin("Je suis un felin !");
     }
 }
+// une classe abstract a une methode abstract, et il faut le tester
 // la fonction abstract : il faut implementer une methode
 // chaque classe contient un constructeur 
 // il faut appeler le constructeur de la classe superieure
