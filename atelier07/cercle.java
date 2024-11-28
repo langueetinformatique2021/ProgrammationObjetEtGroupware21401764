@@ -28,8 +28,10 @@ public class Cercle extends FigureGeometrique implements Comparable<Cercle> {
 	
 	// implementation de la methode comareTo de l'interface Comparable
 	public int compareTo(Object o) { //object "o" est un autre object que object "this"
-		if (this.equals(o)} return 0;
-		Cercle c = {Cercle o;
+		//if (this.equals(o)} return 0;
+		//Cercle c = (Cercle) o;
+		Cercle c = (Cercle) o;
+		if this.rayon == c.rayon) return 0;
 		if this.rayon < c.rayon) return -1;
 		else return 1;
 	}
