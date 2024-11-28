@@ -4,44 +4,38 @@ import cours04.FigureGeometrique; // 假设 FigureGeometrique 是一个抽象类
 import java.lang.Comparable;
 
 public class Cercle extends FigureGeometrique implements Comparable<Cercle> {
-    private double rayon; // 圆的半径
+   
+	double rayon;
+	
+	// creation  d'une nouvelle instance de Cercle
+	public Cercle (float x) {
+		super("noir");
+		rayon = x;
+		
+	}
+	
+	// calcul du perimetre d'un cercle rouge
+	// @return perimetre
+	public float perimetre() {return (float)(2.0*Math.PI*rayon);}
+	// private double rayon; // 圆的半径  on ecrit pas double en cosierant la memoire
+	
+	
+	//calcul de lq surfacr d'un cercle
+	// @return surface
+	public float surface() {return (Math.PI*rayon*rayon)}
+	
+	
+	
+	// implementation de la methode comareTo de l'interface Comparable
+	public int compareTo(Object o) { //object "o" est un autre object que object "this"
+		if (this.equals(o)} return 0;
+		Cercle c = {Cercle o;
+		if this.rayon < c.rayon) return -1;
+		else return 1;
+	}
+	
 
-    // 构造函数
-    public Cercle(double rayon) {
-        this.rayon = rayon;
-    }
-
-    // 获取圆的半径
-    public double getRayon() {
-        return rayon;
-    }
-
-    // 设置圆的半径
-    public void setRayon(double rayon) {
-        this.rayon = rayon;
-    }
-
-    // 实现 FigureGeometrique 的抽象方法：计算面积
     
-    public double calculerSurface() {
-        return Math.PI * rayon * rayon; // 面积公式：π * r^2
-    }
 
-    // 实现 FigureGeometrique 的抽象方法：计算周长
+  
    
-    public double calculerPerimetre() {
-        return 2 * Math.PI * rayon; // 周长公式：2 * π * r
-    }
-
-    // 实现 Comparable 接口的方法：比较两个圆的面积
-    @Override
-    public int compareTo(Cercle autreCercle) {
-        return Double.compare(this.calculerSurface(), autreCercle.calculerSurface());
-    }
-
-    // 重写 toString 方法，用于打印圆的信息
-   
-    public String toString() {
-        return "Cercle de rayon " + rayon + ", Surface: " + calculerSurface() + ", Périmètre: " + calculerPerimetre();
-    }
-}
