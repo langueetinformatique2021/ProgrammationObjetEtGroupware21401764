@@ -42,7 +42,8 @@ public class Felin extends Animal {
 /** cri du félin */
     public void crier() {
 // Exemple : méthode à définir selon le cri spécifique du félin
-    	System.out.printlin("Je suis un felin !");
+    	String.cri = (domestique)? "miaule" : "rugis";
+    	System.out.printlin("Je suis un felin !" + "Je" + "cri");
     }
     public String nom() {
     	    return null;
@@ -54,3 +55,10 @@ public class Felin extends Animal {
 // chaque classe contient un constructeur 
 // il faut appeler le constructeur de la classe superieure
 // ex sert a comprendre la relation entre la classe et la classe superieure
+
+
+
+
+
+
+
